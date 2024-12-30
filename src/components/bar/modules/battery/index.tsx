@@ -63,12 +63,12 @@ const BatteryLabel = (): BarBoxChild => {
     );
 
     const componentChildren = Variable.derive(
-        [bind(show_label), bind(batteryService, 'percentage'), bind(hideLabelWhenFull)],
-        (showLabel, percentage, hideLabelWhenFull) => {
+        [bind(show_label), bind(batteryService, 'percentage'), bind(hideLabelWhenFull), bind(batteryService, 'energy-rate')],
+        (showLabel, percentage, hideLabelWhenFull, rate) => {
             const isCharged = Math.round(percentage) === 100;
 
             const icon = <label className={'bar-button-icon battery txt-icon'} label={batIcon()} />;
-            const label = <label className={'bar-button-label battery'} label={`${Math.floor(percentage * 100)}%`} />;
+            const label = <label className={'bar-button-label battery'} label={`${Math.floor(percentage * 100)}% ${parseFloat(rate).toFixed(2)}W`} />;
 
             const children = [icon];
 
