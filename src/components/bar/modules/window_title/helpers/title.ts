@@ -19,6 +19,7 @@ export const getWindowMatch = (client: AstalHyprland.Client): Record<string, str
         // Original Entries
         ['kitty', '󰄛', 'Kitty Terminal'],
         ['firefox', '󰈹', 'Firefox'],
+        ['brave', '󰈹', 'Brave'],
         ['microsoft-edge', '󰇩', 'Edge'],
         ['discord', '', 'Discord'],
         ['vesktop', '', 'Vesktop'],
@@ -49,6 +50,7 @@ export const getWindowMatch = (client: AstalHyprland.Client): Record<string, str
         ['tilix', '', 'Tilix'],
         ['xterm', '', 'XTerm'],
         ['urxvt', '', 'URxvt'],
+        ['ghostty', '', 'Ghostty'],
         ['st', '', 'st Terminal'],
 
         // Development Tools
