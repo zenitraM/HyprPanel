@@ -18,8 +18,9 @@ export const computeCPU = (): number => {
     // Calculate the differences from the previous to current data
     const totalDiff = currentCpuData.total - previousCpuData.total;
     const idleDiff = currentCpuData.idle - previousCpuData.idle;
+    const iowaitDiff = currentCpuData.iowait - previousCpuData.iowait;
 
-    const cpuUsagePercentage = totalDiff > 0 ? ((totalDiff - idleDiff) / totalDiff) * 100 : 0;
+    const cpuUsagePercentage = totalDiff > 0 ? ((totalDiff - idleDiff - iowaitDiff) / totalDiff) * 100 : 0;
 
     previousCpuData = currentCpuData;
 
