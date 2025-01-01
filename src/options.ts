@@ -945,6 +945,7 @@ const options = mkOptions(CONFIG, {
             show_numbered: opt(false),
             showWsIcons: opt(false),
             showApplicationIcons: opt(false),
+            showApplicationIconsNextToNumber: opt(false),
             applicationIconOncePerWorkspace: opt(true),
             applicationIconMap: opt<ApplicationIcons>({}),
             applicationIconFallback: opt('󰣆'),

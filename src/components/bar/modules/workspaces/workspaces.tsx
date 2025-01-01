@@ -21,10 +21,12 @@ const {
     workspaceIconMap,
     showWsIcons,
     showApplicationIcons,
+    showApplicationIconsNextToNumber,
     applicationIconOncePerWorkspace,
     applicationIconMap,
     applicationIconEmptyWorkspace,
     applicationIconFallback,
+    hideUnoccupied,
 } = options.bar.workspaces;
 const { available, active, occupied } = options.bar.workspaces.icons;
 const { matugen } = options.theme;
@@ -49,6 +51,7 @@ export const WorkspaceModule = ({ monitor }: WorkspaceModuleProps): JSX.Element 
             bind(workspaceIconMap),
             bind(showWsIcons),
             bind(showApplicationIcons),
+            bind(showApplicationIconsNextToNumber),
             bind(applicationIconOncePerWorkspace),
             bind(applicationIconMap),
             bind(applicationIconEmptyWorkspace),
@@ -79,6 +82,7 @@ export const WorkspaceModule = ({ monitor }: WorkspaceModuleProps): JSX.Element 
             workspaceIconMapping: WorkspaceIconMap,
             displayWorkspaceIcons: boolean,
             displayApplicationIcons: boolean,
+            displayApplicationIconsNextToNumber: boolean,
             appIconOncePerWorkspace: boolean,
             applicationIconMapping: ApplicationIcons,
             applicationIconEmptyWorkspace: string,
@@ -143,6 +147,7 @@ export const WorkspaceModule = ({ monitor }: WorkspaceModuleProps): JSX.Element 
                                 wsId,
                                 index,
                                 monitor,
+                                displayApplicationIconsNextToNumber,
                             )}
                             setup={(self) => {
                                 const currentWsClients = clients.filter((client) => client.workspace.id === wsId);

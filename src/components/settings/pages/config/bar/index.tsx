@@ -244,6 +244,7 @@ export const BarSettings = (): JSX.Element => {
                     subtitle="Use class/title from 'hyprctl clients'"
                     type="object"
                 />
+                <Option opt={options.bar.workspaces.show_numbered} title="Show Workspace Numbers" type="boolean" />
                 <Option
                     opt={options.bar.workspaces.applicationIconFallback}
                     title="Fallback App Icon"

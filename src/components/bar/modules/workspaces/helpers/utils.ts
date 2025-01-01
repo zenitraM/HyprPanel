@@ -249,8 +249,12 @@ export const renderLabel = (
     i: number,
     index: number,
     monitor: number,
+    showAppIconsNextToNumber: boolean,
 ): string => {
     if (showAppIcons) {
+        if (showAppIconsNextToNumber) {
+            return `${i} ${appIcons}`;
+        }
         return appIcons;
     }
 
